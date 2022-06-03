@@ -1,0 +1,34 @@
+﻿<Application x:Class="WpfApp1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp1"
+             xmlns:viewModel="clr-namespace:WpfApp1.ViewClass"
+             xmlns:view ="clr-namespace:WpfApp1.Views"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Navigation.xaml"/>
+                <ResourceDictionary Source="Styles/Combobox.xaml"/>
+                <ResourceDictionary Source="Styles/ComboBoxItem.xaml"/>
+                <ResourceDictionary Source="Styles/CloseButton.xaml"/>
+                <ResourceDictionary Source="Styles/Button.xaml"/>
+                <ResourceDictionary Source="Styles/LoginEmail.xaml"/>
+                <ResourceDictionary Source="Styles/Password.xaml"/>
+                <ResourceDictionary Source="Styles/MinimizeButton.xaml"/>
+                <ResourceDictionary Source="Styles/TreeView.xaml"/>
+                <ResourceDictionary Source="Styles/Ok.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:Home/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ServersViewModel}">
+                <view:Servers/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
