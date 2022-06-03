@@ -14,10 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Security.Cryptography;
 using System.Diagnostics;
-using WpfApp1.Views;
-using WpfApp1.API;
+using CherryServersProject.Views;
+using CherryServersProject.API;
 
-namespace WpfApp1
+namespace CherryServersProject
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -73,9 +73,19 @@ namespace WpfApp1
 
                 Login login = new Login();
                 string log = login.Logon(email,hash);
-                Interface next = new Interface();
-                next.Show();
-                this.Hide();
+
+                if (log == "fail") {
+                    //Email.Text = "";
+                    Password.Password = "";
+                    return;
+                }
+                else if (log != "fail") {
+                    Interface next = new Interface();
+                    next.Show();
+                    this.Hide();
+
+                }
+                
                 
 
             }

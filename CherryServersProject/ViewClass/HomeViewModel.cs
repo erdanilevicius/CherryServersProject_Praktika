@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp1.ViewClass
+namespace CherryServersProject.ViewClass
 {
-    internal class ServersViewModel
+    public class HomeViewModel
     {
     }
 }

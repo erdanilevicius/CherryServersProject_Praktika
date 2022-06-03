@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp1.API;
-using WpfApp1;
+using CherryServersProject.API;
+using CherryServersProject;
 
-namespace WpfApp1.Views
+namespace CherryServersProject.Views
 {
     /// <summary>
     /// Interaction logic for Home.xaml

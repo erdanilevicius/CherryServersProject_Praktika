@@ -11,14 +11,15 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 
-namespace WpfApp1.API
+
+namespace CherryServersProject.API
 {
-    internal class ProjectServers
+    internal class Projects
     {
-        public string[] PServers(string ProjectID)
+        public string[] Project(string TeamID)
         {
 
-            var url = "https://api.cherryservers.com/v1/projects/" + ProjectID + "/servers";
+            var url = "https://api.cherryservers.com/v1/teams/"+TeamID+"/projects";
 
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
 
@@ -32,13 +33,13 @@ namespace WpfApp1.API
 
                 string res = result.ToString();
 
-                JObject answ = JObject.Parse("{\"SRV\":" + res + "}");
+                JObject answ = JObject.Parse("{\"PROJE\":" + res + "}");
                 List<string> list = new List<string>();
-                foreach (var ans in answ["SRV"])
+                foreach (var ans in answ["PROJE"])
                 {
-                    Srv Deserialized = JsonConvert.DeserializeObject<Srv>(ans.ToString());
+                    Proje Deserialized = JsonConvert.DeserializeObject<Proje>(ans.ToString());
                     list.Add(Deserialized.id.ToString());
-                    list.Add(Deserialized.hostname.ToString());
+                    list.Add(Deserialized.name.ToString());
 
                 }
                 string[] Answer = list.ToArray();
@@ -51,11 +52,12 @@ namespace WpfApp1.API
         }
 
     }
-    public class Srv
-    {
-        public  int id { get; set; }
-        public string hostname { get; set; }
-    }
 
+    public class Proje
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+
+    }
 
 }

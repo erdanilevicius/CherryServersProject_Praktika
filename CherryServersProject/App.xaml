@@ -1,9 +1,9 @@
-﻿<Application x:Class="WpfApp1.App"
+﻿<Application x:Class="CherryServersProject.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WpfApp1"
-             xmlns:viewModel="clr-namespace:WpfApp1.ViewClass"
-             xmlns:view ="clr-namespace:WpfApp1.Views"
+             xmlns:local="clr-namespace:CherryServersProject"
+             xmlns:viewModel="clr-namespace:CherryServersProject.ViewClass"
+             xmlns:view ="clr-namespace:CherryServersProject.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>

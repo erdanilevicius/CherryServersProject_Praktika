@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1.Views
+namespace CherryServersProject.Views
 {
     /// <summary>
     /// Interaction logic for Servers.xaml

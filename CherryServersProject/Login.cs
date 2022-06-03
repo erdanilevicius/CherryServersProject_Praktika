@@ -11,7 +11,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 
-namespace WpfApp1
+namespace CherryServersProject
 {
     internal class Login
     {
@@ -29,27 +29,44 @@ namespace WpfApp1
 
             var data = "{\"username\": " + em + ", \"password\": " + pss + " }";
 
-            using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+            try
             {
-                streamWriter.Write(data);
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    streamWriter.Write(data);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+                using (var streamReader = new StreamReader(response.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    string rezultatas = result.ToString();
+
+
+                    JObject gaut = JObject.Parse("{\"USR\":" + result + "}");
+                    List<string> strings = new List<string>();
+
+                    Usr obj = System.Text.Json.JsonSerializer.Deserialize<Usr>(rezultatas);
+                    tok = obj.api_token;
+
+                    return tok;
+
+                }
+
+            }
+            catch {
+                string Head = "Error";
+                string Msg = "Incorrect Credentials";
+                MsgBox mm = new MsgBox(Head,Msg);
+                mm.Show();
+
+                string a= "fail";
+                return a;
+            
+            
             }
 
-            var response = (HttpWebResponse)request.GetResponse();
-            using (var streamReader = new StreamReader(response.GetResponseStream()))
-            {
-                var result = streamReader.ReadToEnd();
-                string rezultatas = result.ToString();
-
-
-                JObject gaut = JObject.Parse("{\"USR\":" + result + "}");
-                List<string> strings = new List<string>();
-
-                Usr obj = System.Text.Json.JsonSerializer.Deserialize<Usr>(rezultatas);
-                tok = obj.api_token;
-
-                return tok;
-
-            }
+            
         }
 
     }

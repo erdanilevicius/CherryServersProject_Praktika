@@ -11,10 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfApp1.API;
-using WpfApp1.Views;
+using CherryServersProject.API;
+using CherryServersProject.Views;
 
-namespace WpfApp1
+namespace CherryServersProject
 {
     /// <summary>
     /// Interaction logic for Interface.xaml

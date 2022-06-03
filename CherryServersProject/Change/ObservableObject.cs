@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace WpfApp1.Change
+namespace CherryServersProject.Change
 {
     internal class ObservableObject : INotifyPropertyChanged
     {

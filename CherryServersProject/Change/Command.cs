@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace WpfApp1.Change
+namespace CherryServersProject.Change
 {
     class Command : ICommand
     {
