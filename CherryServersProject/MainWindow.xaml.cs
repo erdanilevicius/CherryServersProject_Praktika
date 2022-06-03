@@ -14,10 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Security.Cryptography;
 using System.Diagnostics;
-using WpfApp1.Views;
-using WpfApp1.API;
+using CherryServersProject.Views;
+using CherryServersProject.API;
 
-namespace WpfApp1
+namespace CherryServersProject
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

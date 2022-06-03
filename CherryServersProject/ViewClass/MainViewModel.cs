@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfApp1.Change;
+using CherryServersProject.Change;
 
-namespace WpfApp1.ViewClass
+namespace CherryServersProject.ViewClass
 {
     internal class MainViewModel : ObservableObject
     {
