@@ -66,6 +66,7 @@
         <Setter Property="Foreground" Value="AliceBlue"/>
         <Setter Property="Margin" Value="0,5"/>
         <Setter Property="Height" Value="30"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="ValidationErrorTemplate">
 
             <Setter.Value>

@@ -96,6 +96,7 @@
                       Grid.RowSpan="2"
                       Width="150"
                       Height="30"
+                      Cursor="Hand"
                       Style="{StaticResource ComboboxStyle}">
                 <ComboBoxItem Content="Power On"  Style="{StaticResource ItemContainerStyle}"/>
                 <ComboBoxItem Content="Power Off"  Style="{StaticResource ItemContainerStyle}"/>
@@ -110,7 +111,8 @@
                     Content="Perform Action"
                     Style="{StaticResource Button}"
                     FontFamily="/Fonts/#Poppins"
-                    FontSize="17" Click="Action_Click"/>
+                    FontSize="17" Click="Action_Click"
+                    Cursor="Hand"/>
 
 
         </Grid>
