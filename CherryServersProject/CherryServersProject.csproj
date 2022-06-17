@@ -163,11 +163,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="API\GetServer.cs" />
+    <Compile Include="API\Perform.cs" />
     <Compile Include="API\Projects.cs" />
     <Compile Include="API\ProjectServers.cs" />
     <Compile Include="API\Teams.cs" />
     <Compile Include="MsgBox.xaml.cs">
       <DependentUpon>MsgBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServerInfo.xaml.cs">
+      <DependentUpon>ServerInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewClass\HomeViewModel.cs" />
     <Compile Include="ViewClass\MainViewModel.cs" />
@@ -204,6 +209,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ServerInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\CloseButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,6 +226,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Grid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

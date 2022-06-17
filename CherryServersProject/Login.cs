@@ -42,8 +42,6 @@ namespace CherryServersProject
                     var result = streamReader.ReadToEnd();
                     string rezultatas = result.ToString();
 
-
-                    JObject gaut = JObject.Parse("{\"USR\":" + result + "}");
                     List<string> strings = new List<string>();
 
                     Usr obj = System.Text.Json.JsonSerializer.Deserialize<Usr>(rezultatas);

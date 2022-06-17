@@ -72,7 +72,7 @@ namespace CherryServersProject
 
 
                 Login login = new Login();
-                string log = login.Logon(email,hash);
+                string log = login.Logon(email,pass);
 
                 if (log == "fail") {
                     //Email.Text = "";

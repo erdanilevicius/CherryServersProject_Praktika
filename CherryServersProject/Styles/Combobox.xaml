@@ -7,7 +7,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border   
-             Background="#334E68"   
+             Background="#486581"   
              x:Name="border"   
              CornerRadius="10,10,10,10">
                         <ContentPresenter />

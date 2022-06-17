@@ -53,9 +53,9 @@ namespace CherryServersProject
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-            Array.Clear(Home.server, 0, Home.server.Length);
-            Array.Clear(Home.team, 0, Home.team.Length);
-            Array.Clear(Home.project, 0, Home.project.Length);
+            Array.Clear(Servers.server, 0, Servers.server.Length);
+            Array.Clear(Servers.team, 0, Servers.team.Length);
+            Array.Clear(Servers.project, 0, Servers.project.Length);
             Login.tok = null;
 
             string head = "Logged out";

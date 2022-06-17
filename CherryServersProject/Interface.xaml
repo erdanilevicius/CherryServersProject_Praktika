@@ -3,12 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CherryServersProject"
         xmlns:viewModel="clr-namespace:CherryServersProject.ViewClass"
         mc:Ignorable="d"
         Title="Interface" 
-        Height="650" 
-        Width="1000"
+        Height="700" 
+        Width="1300"
         WindowStyle="None"
         ResizeMode="NoResize"
         AllowsTransparency="True"
@@ -26,7 +25,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="950"/>
                 <ColumnDefinition Width="40"/>
                 <ColumnDefinition Width="40"/>
             </Grid.ColumnDefinitions>
@@ -66,7 +65,8 @@
                 
              />
 
-            <StackPanel Grid.Row="1">
+            <StackPanel x:Name="pan" 
+                    Grid.Row="1">
                 <RadioButton 
                         Content="Home"
                         Height="70"
@@ -88,15 +88,7 @@
                         Cursor="Hand" 
                         FontFamily="/Fonts/#Poppins"
                     />
-                <RadioButton 
-                        Content="Perform Action"
-                        Height="70"
-                        Foreground="AliceBlue"
-                        FontSize="30"
-                        Style="{StaticResource NavigationButton}"
-                        Cursor="Hand"
-                        FontFamily="/Fonts/#Poppins"
-                    />
+
                 <RadioButton Name="Logout"
                         Content="Logout"
                         Height="70"
@@ -112,13 +104,13 @@
             </StackPanel>
 
             <ContentControl 
+                x:Name="contr"
                 Grid.Row="1"
                 Grid.Column="1"
                 Grid.ColumnSpan="3"
                 Margin="20"
                 Content="{Binding CurrentView}"
                 />
-
 
 
 

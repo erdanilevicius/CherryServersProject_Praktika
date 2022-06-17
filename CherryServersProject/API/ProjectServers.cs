@@ -15,6 +15,14 @@ namespace CherryServersProject.API
 {
     internal class ProjectServers
     {
+
+        public static string srvID;
+        public static string srvName;
+        public static string srvConfig;
+        public static string OS;
+        public static string Hourly;
+        public static string Cost;
+        public static string Status;
         public string[] PServers(string ProjectID)
         {
 
@@ -36,10 +44,15 @@ namespace CherryServersProject.API
                 List<string> list = new List<string>();
                 foreach (var ans in answ["SRV"])
                 {
+                    
                     Srv Deserialized = JsonConvert.DeserializeObject<Srv>(ans.ToString());
                     list.Add(Deserialized.id.ToString());
                     list.Add(Deserialized.hostname.ToString());
-
+                    list.Add(Deserialized.name.ToString());
+                    list.Add(Deserialized.image.ToString());
+                    list.Add(Deserialized.pricing.unit.ToString());
+                    list.Add(Deserialized.pricing.unit_price.ToString() + " " + Deserialized.pricing.currency.ToString());
+                    list.Add(Deserialized.state.ToString()) ;
                 }
                 string[] Answer = list.ToArray();
                 return Answer;
@@ -54,7 +67,19 @@ namespace CherryServersProject.API
     public class Srv
     {
         public  int id { get; set; }
+        public string name { get; set; }
         public string hostname { get; set; }
+        public string image { get; set; }
+        public Price pricing { get; set; }
+        public string state { get; set; }
+    }
+
+    public class Price
+    {
+        public string currency { get; set; }
+        public string unit { get; set; }
+        public double unit_price { get; set; }
+
     }
 
 

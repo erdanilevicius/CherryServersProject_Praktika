@@ -9,15 +9,15 @@ namespace CherryServersProject.ViewClass
 {
     internal class MainViewModel : ObservableObject
     {
-        public Command HomeViewCommand { get; set; }
+        public static  Command HomeViewCommand { get; set; }
 
-        public Command ServersViewCommand { get; set; }
+        public static Command ServersViewCommand { get; set; }
 
-        public HomeViewModel HomeVM { get; set; }
+        public static HomeViewModel HomeVM { get; set; }
 
-        public ServersViewModel ServersVM { get; set; }
+        public static ServersViewModel ServersVM { get; set; }
 
-        private object _currentView;
+        public static object _currentView;
         public object CurrentView
         { 
             get { return _currentView; }
