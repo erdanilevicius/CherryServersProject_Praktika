@@ -16,7 +16,6 @@
                 <ResourceDictionary Source="Styles/LoginEmail.xaml"/>
                 <ResourceDictionary Source="Styles/Password.xaml"/>
                 <ResourceDictionary Source="Styles/MinimizeButton.xaml"/>
-                <ResourceDictionary Source="Styles/TreeView.xaml"/>
                 <ResourceDictionary Source="Styles/Ok.xaml"/>
                 <ResourceDictionary Source="Styles/Grid.xaml"/>
             </ResourceDictionary.MergedDictionaries>

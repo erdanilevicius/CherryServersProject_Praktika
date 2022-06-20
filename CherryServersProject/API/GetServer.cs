@@ -22,73 +22,77 @@ namespace CherryServersProject.API
             var url = "https://api.cherryservers.com/v1/servers/" + SrvID;
             var url2 = "https://api.cherryservers.com/v1/servers/" + SrvID + "/ips";
 
-
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
 
             httpRequest.Headers["Authorization"] = "Bearer " + Login.tok;
             List<string> list = new List<string>();
 
-            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+
+            try
             {
-                var result = streamReader.ReadToEnd();
-                string res = result.ToString();
-
-                Root Deserialized = JsonConvert.DeserializeObject<Root>(res);
-                list.Add("                           Showing information for server:  ' " +Deserialized.hostname.ToString()+" '");
-                list.Add("Resource status: "+Deserialized.state.ToString());
-                list.Add("Resource name: "+Deserialized.name.ToString());
-                list.Add("Resource id:"+Deserialized.id.ToString());
-                list.Add("Region: "+Deserialized.region.name.ToString());
-                list.Add("Image: "+Deserialized.image.ToString());
-                list.Add("Traffic: "+Deserialized.plan.specs.bandwidth.name.ToString());
-                list.Add("Deployment date: "+Deserialized.created_at.ToString());
-                list.Add("Spent this month (21% VAT): "+Math.Round(Convert.ToDouble(Deserialized.pricing.price_total.ToString()),2 ).ToString() + " " + Deserialized.pricing.currency.ToString() + " (" + Deserialized.pricing.quantity.ToString() + " " + Deserialized.pricing.unit.ToString().ToLower()+")");
-                list.Add("Price: "+Deserialized.pricing.unit_price.ToString()+" "+ Deserialized.pricing.currency.ToString().ToUpper());
-                list.Add("Billing cycle: "+Deserialized.pricing.unit.ToString());
-
-                list.Add("");
-                list.Add("CPU: "+Deserialized.plan.specs.cpus.cores.ToString() +" @ "+Deserialized.plan.specs.cpus.frequency.ToString() +" "+Deserialized.plan.specs.cpus.unit.ToString());
-                list.Add("RAM: "+Deserialized.plan.specs.memory.name.ToString());
-                list.Add("NIC: "+Deserialized.plan.specs.nics.name.ToString());
-                list.Add("");
-
-            }
-            var httpRequest2 = (HttpWebRequest)WebRequest.Create(url2);
-
-            httpRequest2.Headers["Authorization"] = "Bearer " + Login.tok;
-            var httpResponse2 = (HttpWebResponse)httpRequest2.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse2.GetResponseStream()))
-            {
-                var result = streamReader.ReadToEnd();
-                string res = result.ToString();
-
-
-                JObject answ = JObject.Parse("{\"IPS\":" + res + "}");
-
-                foreach (var ans in answ["IPS"])
+                var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
-                    Ips Deserialized = JsonConvert.DeserializeObject<Ips>(ans.ToString());
-                    list.Add(Deserialized.type.ToString()+": "+ Deserialized.address.ToString());
+                    var result = streamReader.ReadToEnd();
+                    string res = result.ToString();
+
+                    Root Deserialized = JsonConvert.DeserializeObject<Root>(res);
+                    list.Add("                           Showing information for server:  ' " + Deserialized.hostname.ToString() + " '");
+                    list.Add("Resource status: " + Deserialized.state.ToString());
+                    list.Add("Resource name: " + Deserialized.name.ToString());
+                    list.Add("Resource id:" + Deserialized.id.ToString());
+                    list.Add("Region: " + Deserialized.region.name.ToString());
+                    list.Add("Image: " + Deserialized.image.ToString());
+                    list.Add("Traffic: " + Deserialized.plan.specs.bandwidth.name.ToString());
+                    list.Add("Deployment date: " + Deserialized.created_at.ToString());
+                    list.Add("Spent this month (21% VAT): " + Math.Round(Convert.ToDouble(Deserialized.pricing.price_total.ToString()), 2).ToString() + " " + Deserialized.pricing.currency.ToString() + " (" + Deserialized.pricing.quantity.ToString() + " " + Deserialized.pricing.unit.ToString().ToLower() + ")");
+                    list.Add("Price: " + Deserialized.pricing.unit_price.ToString() + " " + Deserialized.pricing.currency.ToString().ToUpper());
+                    list.Add("Billing cycle: " + Deserialized.pricing.unit.ToString());
+
+                    list.Add("");
+                    list.Add("CPU: " + Deserialized.plan.specs.cpus.cores.ToString() + " @ " + Deserialized.plan.specs.cpus.frequency.ToString() + " " + Deserialized.plan.specs.cpus.unit.ToString());
+                    list.Add("RAM: " + Deserialized.plan.specs.memory.name.ToString());
+                    list.Add("NIC: " + Deserialized.plan.specs.nics.name.ToString());
+                    list.Add("");
+
                 }
+                var httpRequest2 = (HttpWebRequest)WebRequest.Create(url2);
+
+                httpRequest2.Headers["Authorization"] = "Bearer " + Login.tok;
+                var httpResponse2 = (HttpWebResponse)httpRequest2.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse2.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    string res = result.ToString();
 
 
+                    JObject answ = JObject.Parse("{\"IPS\":" + res + "}");
+
+                    foreach (var ans in answ["IPS"])
+                    {
+                        Ips Deserialized = JsonConvert.DeserializeObject<Ips>(ans.ToString());
+                        list.Add(Deserialized.type.ToString() + ": " + Deserialized.address.ToString());
+                    }
+
+                }
+                string[] Answer = list.ToArray();
+                return Answer;
 
             }
+            catch {
 
-
-            string[] Answer = list.ToArray();
-
-
-
-                return Answer;
+                string head = "Error";
+                string bod = "Please enter correct server ID";
+                MsgBox msg = new MsgBox(head,bod);
+                msg.Show();
+                return null;
+            }
+           
         }
 
-
-
-
     }
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+    
+    // Getting and setting info got from json file
     public class Root
     {
         public int id { get; set; }
@@ -207,23 +211,5 @@ namespace CherryServersProject.API
         public int address_family { get; set; }
         public string type { get; set; }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

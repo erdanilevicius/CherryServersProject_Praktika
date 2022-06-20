@@ -66,8 +66,6 @@ namespace CherryServersProject.Views
                 i += 2;
             }
 
-
-
             ServersDataGrid.ItemsSource = info;
         }
 
@@ -81,10 +79,8 @@ namespace CherryServersProject.Views
 
             inf.Show();
 
-
         }
     }
-
 
     public class GridInfo { 
     
@@ -95,8 +91,6 @@ namespace CherryServersProject.Views
         public string Price { get; set; }
         public string Billing { get; set; }
         public string Status { get; set; }
-
-
 
     }
 }

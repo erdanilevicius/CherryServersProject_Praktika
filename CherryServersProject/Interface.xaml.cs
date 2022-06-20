@@ -27,10 +27,6 @@ namespace CherryServersProject
         {
             InitializeComponent();
 
-
-
-
-
         }
         private void Window_MouseMove_1(object sender, MouseEventArgs e)
         {
@@ -71,8 +67,5 @@ namespace CherryServersProject
 
         }
     }
-
-
-
 
 }

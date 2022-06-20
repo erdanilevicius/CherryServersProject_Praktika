@@ -43,10 +43,10 @@
                 CornerRadius="25,0,0,0"
 
                 >
-               
+
                 <TextBlock Text="Welcome" Foreground="AliceBlue" Padding="30,0" FontSize="15" FontFamily="Fonts/#Poppins"/>
             </Border>
-            
+
             <Button Style="{DynamicResource Close}" x:Name="CLS"
                 Grid.Column="3"
                 Background="MediumVioletRed" Click="Close"
@@ -98,8 +98,8 @@
                         Cursor="Hand"
                         FontFamily="/Fonts/#Poppins" Click="Logout_Click"
                     />
-                
-                
+
+
 
             </StackPanel>
 
@@ -112,15 +112,6 @@
                 Content="{Binding CurrentView}"
                 />
 
-
-
         </Grid>
-
-
     </Border>
-
-
-
-
-   
 </Window>

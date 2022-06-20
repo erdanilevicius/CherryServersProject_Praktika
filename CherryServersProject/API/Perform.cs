@@ -36,13 +36,6 @@ namespace CherryServerProject.API
                     string results = result.ToString();
                     return results;
                 }
-
-
-
         }
-
-
-
-
     }
 }

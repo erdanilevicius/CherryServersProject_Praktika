@@ -12,11 +12,6 @@ using System;
 
 namespace CherryServersProject.Views
 {
-    /// <summary>
-    /// Interaction logic for Home.xaml
-    /// </summary>
-    /// 
-
     public partial class Home : UserControl
     {
 
@@ -34,9 +29,16 @@ namespace CherryServersProject.Views
                 string srvId = Server.Text;
                 string[] ats = srv.Gserv(srvId);
 
-                foreach (var atss in ats)
+                if (ats == null)
                 {
-                    inform.Text += atss.ToString() + "\n";
+                    return;
+
+                }
+                else {
+                    foreach (var atss in ats)
+                    {
+                        inform.Text += atss.ToString() + "\n";
+                    }
                 }
             }
             else if (Server.Text == string.Empty)

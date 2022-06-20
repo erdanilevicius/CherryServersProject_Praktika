@@ -44,9 +44,6 @@ namespace CherryServersProject.ViewClass
 
 
         }
-        
-
-
 
     }
 }

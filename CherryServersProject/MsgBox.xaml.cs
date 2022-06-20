@@ -30,9 +30,6 @@ namespace CherryServersProject
         {
             this.Close();
         }
-
-
-
         private void Window_MouseMove_1(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)

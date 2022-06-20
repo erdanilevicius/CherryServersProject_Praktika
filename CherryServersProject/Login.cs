@@ -20,6 +20,9 @@ namespace CherryServersProject
 
         public string Logon(string Email, string hash)
         {
+
+            // Hash is just password right now because of login changes
+
             string em = "\"" + Email + "\"";
             string pss = "\"" + hash + "\"";
 
@@ -60,34 +63,13 @@ namespace CherryServersProject
 
                 string a= "fail";
                 return a;
-            
-            
-            }
-
-            
+            }   
         }
-
     }
 
     public class Usr
     {
-        public string hash { get; set; }
         public string api_token { get; set; }
-        //public int verification_type { get; set; }
-        //public bool is_primary { get; set; }
-        //public bool email_confirmed { get; set; }
-        //public string username { get; set; }
-        //public int admin_id { get; set; }
-        //public int client_id { get; set; }
-        //public int contact_id { get; set; }
-        //public string email { get; set; }
-        //public string ip_address { get; set; }
-        //public int default_team { get; set; }
-        //public int default_project { get; set; }
-        //public bool facebook { get; set; }
-        //public bool google { get; set; }
-        //public bool allow_promo { get; set; }
-        //public int identity_status { get; set; }
     }
 
 }

@@ -58,9 +58,6 @@ namespace CherryServersProject.API
                 return Answer;
 
             }
-
-
-
         }
 
     }
@@ -81,6 +78,5 @@ namespace CherryServersProject.API
         public double unit_price { get; set; }
 
     }
-
 
 }

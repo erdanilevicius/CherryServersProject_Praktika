@@ -55,10 +55,5 @@ namespace CherryServersProject.API
     {
         public int id { get; set; }
         public string name { get; set; }
-        //public Credit credit { get; set; }
-        //public Billing billing { get; set; }
-        //public string href { get; set; }
     }
-
-
 }

@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
 
+    <!--This is style for dataGridView that displays all currently owned servers by the user-->
     <!--Cells-->
     <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#FF000000"/>
     <Style x:Key="DataGridCellStyle1" TargetType="{x:Type DataGridCell}">
@@ -277,12 +278,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-
-
-
-
-
 
 
 </ResourceDictionary>

@@ -84,21 +84,9 @@
                     
                 </TextBlock>
 
-
-                
-                
-
             </Border>
 
-
-            <Grid Grid.Row="3"
-                  Name="testgrid">
-                
-            </Grid>
-
-
         </Grid>
-
 
     </Border>
 </UserControl>
